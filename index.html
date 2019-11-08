@@ -4,13 +4,16 @@
       <meta charset="utf-8">
       <title>Redirecting to app://torres</title>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      
+  </head>
+  <body>
       <script>
-          $(document).ready(function(){
+          $(function(){
             var params = new URLSearchParams(window.location.search);
             $('head'.append(`<meta http-equiv="refresh" content="0; URL=app://torres?code=${params.get('code')}">`));
             $('head'.append(`<link rel="canonical" href="app://torres?code=${params.get('code')}">`));
           });
           </script>
-  </head>
+  </body>
 
 </html>
