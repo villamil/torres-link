@@ -10,7 +10,7 @@
       <script>
           $(document).ready(function () {
             var params = new URLSearchParams(window.location.search);
-            console.log(params.get('code'))
+            console.log(params.get('code'), "work")
             $('head').append(`<meta http-equiv="refresh" content="0; URL=app://torres?code=${params.get('code')}" />`); 
             $('head').append(`<link rel="canonical" href="app://torres?code=${params.get('code')}" />`); 
 
