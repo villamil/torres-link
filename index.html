@@ -2,18 +2,31 @@
 <html>
   <head>
       <meta charset="utf-8">
-      <title>Redirecting to app://torres</title>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-      
+      <title>Torres</title>
+      <link rel="stylesheet" type="text/css" href="styles.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>      
   </head>
   <body>
+
+    <div class="content">
+      <div class="logo-content">
+        <div class="logo-container">
+          <img class="logo" src="assets/torres.png" alt="Torres">
+        </div>
+        <h1 class="title">Torres</h1>
+      </div>
+      
+      
+      <a class="redirect" href="#">ABRIR APLICACIÓN</a>
+    </div>
+
       <script>
           $(document).ready(function () {
             var params = new URLSearchParams(window.location.search);
             console.log(params.get('code'), "work")
             $('head').append(`<meta http-equiv="refresh" content="0; URL=app://torres?code=${params.get('code')}" />`); 
             $('head').append(`<link rel="canonical" href="app://torres?code=${params.get('code')}" />`); 
-
+            $('a.redirect').attr('href', `app://torres?code=${params.get('code') || ""}`);
             // $('head'.append(`<meta http-equiv="refresh" content="0; URL=app://torres?code=${params.get('code')}" />`));
             // $('head'.append(`<link rel="canonical" href="app://torres?code=${params.get('code')}" />`));
           });
